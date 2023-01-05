@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com eventos</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body class="content">
+    <div>
+        <a delay5s="5" href="https://stackoverflow.com">Stackoverflow</a>
+    </div>
+    <div>
+        <a delay5s="5" href="https://www.instagram.com">Insta</a>
+    </div>
+    <div>
+        <a delay5s="5" href="https://www.facebook.com">Facebook</a>
+    </div>
+
+    <script>
+        function delayedNavigation(e) {
+            e.preventDefault()
+            const tempo = parseInt(e.target.getAttribute('delay5s'))
+            console.log(`Saindo em ${tempo}s...`)
+            regressivo(tempo)
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href
+            }, tempo * 1000)
+        }
+
+        function regressivo(tempo) {
+            setInterval(() => {
+                const div = document.querySelector('div')
+                div.innerHTML = `<p> ${tempo} Segundo(s)</p>`
+                tempo--
+            }, 1000);
+        }
+
+        //const a = document.querySelector('a')
+        //a.onclick = delayedNavigation
+
+        const a = document.querySelector('[delay5s]')
+        a.onclick = delayedNavigation
+
+        
+    </script>
+</body>
+
+</html>
