@@ -1,0 +1,8 @@
+const body = document.querySelector('body')
+
+const p = document.createElement('p')
+p.innerHTML = `${texto aq}`
+const div3 = document.createElement('div')
+div3.appendchild(p)
+
+body.appendchild
