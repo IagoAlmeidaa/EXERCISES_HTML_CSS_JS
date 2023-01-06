@@ -1,0 +1,35 @@
+*{
+    font-family: cursive;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    background-color: #404040;
+    color: #fff;
+    height: 100%;
+    user-select: none;
+}
+
+.contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+}
+
+.contents div {
+  font-size: 3em;
+  border: solid 5px #fff;
+  padding: 20px 40px;
+  margin: 10px;
+  width: min(20%, 30rem);
+  text-align: center;
+}
+
+div{
+    background-color: #22303C;
+}
