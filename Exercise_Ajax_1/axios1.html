@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Axios #01</title>
+    <link rel='stylesheet' href='../css/stylesheet.css'>
+    <script src="js/axios.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Estados</h1>
+
+    <!-- exemplo basico 1 usando Axios -->
+    <script>
+         const url = 'data/estados.json'
+         axios(url).then(resp =>{
+            const item = resp.data.reduce(
+            (html, estado) => html +`<li>${estado.nome}</li>`,''
+            )
+            document.body.insertAdjacentHTML('beforeend', `<ul>${item}</ul>`)
+         })
+    </script>
+</body>
